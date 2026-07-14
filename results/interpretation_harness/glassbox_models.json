@@ -1,0 +1,117 @@
+{
+  "status": {
+    "mono_gbm": "ok",
+    "sparse_tree": "ok",
+    "scorecard": "ok",
+    "glm": "ok",
+    "ripper": "ok",
+    "ga2m": "ok",
+    "nam": "ok"
+  },
+  "scorecard": [
+    [
+      "pgo_GO_0005249>0.5",
+      13
+    ],
+    [
+      "pgo_GO_0070588>0.5",
+      9
+    ],
+    [
+      "pgo_GO_0006811>0.5",
+      8
+    ],
+    [
+      "pgo_GO_0005216>0.5",
+      6
+    ],
+    [
+      "ipr_n_family>q50",
+      5
+    ],
+    [
+      "aa_M>q25",
+      -5
+    ],
+    [
+      "pgo_GO_0016020>0.5",
+      5
+    ],
+    [
+      "struct_rg_norm>q25",
+      -5
+    ],
+    [
+      "is_membrane>0.5",
+      4
+    ],
+    [
+      "iprfam_g_protein-coupled_receptor_rhodopsin-lik>0.5",
+      4
+    ],
+    [
+      "aa_D>q25",
+      -4
+    ],
+    [
+      "pgo_n_terms>q25",
+      -4
+    ],
+    [
+      "pgo_GO_0005524>0.5",
+      -4
+    ],
+    [
+      "aa_W>q50",
+      3
+    ],
+    [
+      "gnomad_lof_z>q75",
+      -3
+    ],
+    [
+      "struct_radius_of_gyration>q75",
+      -3
+    ],
+    [
+      "n_transmembrane>q50",
+      2
+    ],
+    [
+      "aa_L>q75",
+      -2
+    ],
+    [
+      "lof_oe>q75",
+      -2
+    ],
+    [
+      "mis_score>q50",
+      -2
+    ],
+    [
+      "hpa_log_brain_ntpm>q50",
+      2
+    ],
+    [
+      "pgo_n_terms>q50",
+      -2
+    ],
+    [
+      "struct_std_plddt>q25",
+      2
+    ],
+    [
+      "struct_frac_plddt_70_90>q25",
+      -2
+    ],
+    [
+      "struct_frac_plddt_gt90>q50",
+      -2
+    ]
+  ],
+  "tree": "|--- n_transmembrane <= 2.50\n|   |--- gtex_brain_specificity <= 1.03\n|   |   |--- mis_score <= 0.66\n|   |   |   |--- lof_oe <= 0.62\n|   |   |   |   |--- class: 0\n|   |   |   |--- lof_oe >  0.62\n|   |   |   |   |--- class: 0\n|   |   |--- mis_score >  0.66\n|   |   |   |--- class: 0\n|   |--- gtex_brain_specificity >  1.03\n|   |   |--- aa_M <= 1.73\n|   |   |   |--- homol_n_homologs_e3 <= 2.50\n|   |   |   |   |--- class: 0\n|   |   |   |--- homol_n_homologs_e3 >  2.50\n|   |   |   |   |--- class: 1\n|   |   |--- aa_M >  1.73\n|   |   |   |--- struct_mean_plddt <= 82.69\n|   |   |   |   |--- class: 0\n|   |   |   |--- struct_mean_plddt >  82.69\n|   |   |   |   |--- class: 0\n|--- n_transmembrane >  2.50\n|   |--- homol_n_homologs_e3 <= 15.50\n|   |   |--- struct_rg_norm <= 1.31\n|   |   |   |--- class: 0\n|   |   |--- struct_rg_norm >  1.31\n|   |   |   |--- struct_frac_largest_ordered_domain <= 0.43\n|   |   |   |   |--- class: 1\n|   |   |   |--- struct_frac_largest_ordered_domain >  0.43\n|   |   |   |   |--- class: 0\n|   |--- homol_n_homologs_e3 >  15.50\n|   |   |--- pgo_GO_0051260 <= 0.50\n|   |   |   |--- struct_helix_frac <= 0.35\n|   |   |   |   |--- class: 1\n|   |   |   |--- struct_helix_frac >  0.35\n|   |   |   |   |--- class: 1\n|   |   |--- pgo_GO_0051260 >  0.50\n|   |   |   |--- class: 1\n",
+  "ripper": "[[n_transmembrane>q50=1^pgo_GO_0051260>0.5=1^aa_N>q25=0] V [n_transmembrane>q50=1^pgo_GO_0005216>0.5=1^struct_radius_of_gyration>q75=0^pgo_GO_0006813>0.5=1^mis_score>q75=0] V [n_transmembrane>q50=1^ipr_n_family>q50=1^pgo_GO_0005216>0.5=1^seq_len>q75=0^aa_K>q50=0^aa_D>q50=0^ipr_n_domain>q75=1] V [n_transmembrane>q50=1^ipr_n_family>q50=1^pgo_GO_0005216>0.5=1^seq_len>q75=0^gnomad_lof_z>q25=0^protein_length>q50=1] V [n_transmembrane>q50=1^struct_std_plddt>q50=1^gtex_brain_specificity>q75=1^ipr_n_family>q50=1^pgo_GO_0006811>0.5=1^gnomad_lof_z>q75=0]]",
+  "n": 6843,
+  "mono_nonzero": 99
+}

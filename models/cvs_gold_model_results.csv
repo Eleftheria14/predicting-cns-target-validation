@@ -1,0 +1,6 @@
+protocol,gene_roc_auc,gene_pr_auc,pair_roc_auc,pair_pr_auc,within_disease_roc,p_at_20,p_at_50,p_at_100,n
+seqclust,0.8562,0.5109,0.8092,0.576,0.7651,1.0,1.0,0.93,6843.0
+gene_only,0.9092,0.6338,0.8614,0.6407,0.8126,1.0,1.0,0.98,6843.0
+both_axes,0.8603,0.5951,0.8383,0.6223,0.8038,0.8,0.92,0.75,1420.0
+gold661_seqclust,,,0.6272,0.9052,,,,,661.0
+permutation_seqclust,0.4572,,,,,,,,

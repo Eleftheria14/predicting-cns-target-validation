@@ -1,0 +1,12 @@
+channel,n_pairs,n_pos,n_neg,evidence_type,mean_confidence,what_was_observed,what_was_assumed
+src_gold,661,565,96,OBSERVED (hard outcome),0.95,FDA approval status / published efficacy verdict,None — adjudicated ground truth
+src_ctgov,1824,78,1746,OBSERVED + INFERRED,0.52,ClinicalTrials.gov trial status & why-stopped field,Terminated/withdrawn trial → program failure; why_stopped parsed to efficacy_futility (1400) vs safety (424)
+src_ctgov_moa,171,63,108,OBSERVED (target attribution confirmed),0.8,ctgov outcome cross-checked against ChEMBL mechanism-of-action,"Same as ctgov, but target→drug link verified via MoA (higher precision)"
+src_advancement,3350,1465,1885,INFERRED (phase-maturity rule),0.75,Max clinical phase reached + first_year,Phase 1-2 pair with first_year<=2015 & no progress → matured stall = failure; higher phase reached → success signal
+src_pipeline,2297,104,2193,INFERRED (disappearance),0.34,Company pipeline / shareholder-doc appearance across years,Program present then ABSENT for >=5 years (median 8y) → assumed discontinued = failure
+src_ot,105,19,86,OBSERVED (curated stop-reason),0.75,Open Targets stop-reason categories,"Stop reason = negative → efficacy failure (curated, not re-inferred)"
+src_press,23,3,20,OBSERVED (announcement),0.87,Company press-release discontinuation announcement,"Named discontinuation → failure (near-hard, self-reported)"
+src_sec,74,6,68,INFERRED (disclosure disappearance),0.3,SEC 10-K/20-F pipeline disclosures across filings,"Program in filings then dropped → assumed discontinued (low confidence, noisy)"
+src_sec_company,12,3,9,INFERRED (per-company deep sweep),0.3,SEC per-company filing sweep,"Same as SEC, company-scoped"
+src_llm,431,14,417,INFERRED (LLM adjudication),0.41,LLM classification of ambiguous ctgov why-stopped free text,LLM read the stop reason and classified efficacy vs other; DOWN-WEIGHTED (0.40) due to DGIdb target-attribution promiscuity
+src_conf_abstract,18,2,16,INFERRED (abstract mining),0.51,Conference-abstract text mining,Negative result reported in abstract → failure signal

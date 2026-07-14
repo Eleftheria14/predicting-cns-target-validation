@@ -1,0 +1,23 @@
+# Python
+__pycache__/
+*.pyc
+.ipynb_checkpoints/
+.venv/
+venv/
+.DS_Store
+
+# Lint / test / build caches
+.ruff_cache/
+.pytest_cache/
+.mypy_cache/
+.nodebin/
+.cache/
+
+# Harness scratch output dirs (created by the test suite)
+src/t_*/
+
+# Build deliverables (git bundle / tarball live OUTSIDE the tracked tree)
+predicting-cns-target-validation.bundle
+predicting-cns-target-validation.tar.gz
+t_*/
+/t_*/

@@ -1,0 +1,13 @@
+# Ruff configuration for the CNS-CVS repository.
+line-length = 100
+target-version = "py311"
+
+[lint]
+# Default (E, F) plus import and bugbear checks. E701/E702 (compound statements
+# via ':' and ';') are allowed: the harness uses them intentionally in tight
+# numeric setup blocks, and forbidding them would hurt readability, not help it.
+select = ["E", "F", "W", "I", "B"]
+ignore = ["E701", "E702", "E703", "E402", "E741"]
+
+[lint.per-file-ignores]
+"src/test_*.py" = ["F841", "E501"]  # tests bind intermediate values for clarity

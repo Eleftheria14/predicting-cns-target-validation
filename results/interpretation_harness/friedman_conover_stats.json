@@ -1,0 +1,177 @@
+{
+  "per_fold_gene_roc": {
+    "xgb_baseline": [
+      0.8599,
+      0.9158,
+      0.8104,
+      0.8702,
+      0.7965
+    ],
+    "mono_gbm": [
+      0.874,
+      0.917,
+      0.8155,
+      0.8685,
+      0.8184
+    ],
+    "elasticnet_glm": [
+      0.921,
+      0.9049,
+      0.8229,
+      0.843,
+      0.7825
+    ],
+    "cart": [
+      0.8575,
+      0.8781,
+      0.6789,
+      0.7826,
+      0.7685
+    ],
+    "scorecard": [
+      0.9153,
+      0.9091,
+      0.6944,
+      0.7729,
+      0.7769
+    ],
+    "ripper": [
+      0.569,
+      0.7126,
+      0.6477,
+      0.6202,
+      0.6708
+    ],
+    "ga2m": [
+      0.8892,
+      0.9076,
+      0.8172,
+      0.8443,
+      0.7963
+    ],
+    "nam": [
+      0.9148,
+      0.897,
+      0.8034,
+      0.8779,
+      0.8099
+    ],
+    "knn": [
+      0.909,
+      0.9281,
+      0.7724,
+      0.8713,
+      0.8087
+    ]
+  },
+  "friedman_all9": {
+    "chi2": 23.0933,
+    "p": 0.0032
+  },
+  "friedman_6adequate": {
+    "chi2": 1.6857,
+    "p": 0.8907
+  },
+  "conover_holm_p": {
+    "xgb_baseline": {
+      "xgb_baseline": 1.0,
+      "mono_gbm": 1.0,
+      "elasticnet_glm": 1.0,
+      "cart": 0.1926,
+      "scorecard": 1.0,
+      "ripper": 0.0189,
+      "ga2m": 1.0,
+      "nam": 1.0,
+      "knn": 1.0
+    },
+    "mono_gbm": {
+      "xgb_baseline": 1.0,
+      "mono_gbm": 1.0,
+      "elasticnet_glm": 1.0,
+      "cart": 0.0284,
+      "scorecard": 1.0,
+      "ripper": 0.0022,
+      "ga2m": 1.0,
+      "nam": 1.0,
+      "knn": 1.0
+    },
+    "elasticnet_glm": {
+      "xgb_baseline": 1.0,
+      "mono_gbm": 1.0,
+      "elasticnet_glm": 1.0,
+      "cart": 0.1338,
+      "scorecard": 1.0,
+      "ripper": 0.0125,
+      "ga2m": 1.0,
+      "nam": 1.0,
+      "knn": 1.0
+    },
+    "cart": {
+      "xgb_baseline": 0.1926,
+      "mono_gbm": 0.0284,
+      "elasticnet_glm": 0.1338,
+      "cart": 1.0,
+      "scorecard": 1.0,
+      "ripper": 1.0,
+      "ga2m": 0.2743,
+      "nam": 0.0605,
+      "knn": 0.0284
+    },
+    "scorecard": {
+      "xgb_baseline": 1.0,
+      "mono_gbm": 1.0,
+      "elasticnet_glm": 1.0,
+      "cart": 1.0,
+      "scorecard": 1.0,
+      "ripper": 0.2743,
+      "ga2m": 1.0,
+      "nam": 1.0,
+      "knn": 1.0
+    },
+    "ripper": {
+      "xgb_baseline": 0.0189,
+      "mono_gbm": 0.0022,
+      "elasticnet_glm": 0.0125,
+      "cart": 1.0,
+      "scorecard": 0.2743,
+      "ripper": 1.0,
+      "ga2m": 0.0284,
+      "nam": 0.0052,
+      "knn": 0.0022
+    },
+    "ga2m": {
+      "xgb_baseline": 1.0,
+      "mono_gbm": 1.0,
+      "elasticnet_glm": 1.0,
+      "cart": 0.2743,
+      "scorecard": 1.0,
+      "ripper": 0.0284,
+      "ga2m": 1.0,
+      "nam": 1.0,
+      "knn": 1.0
+    },
+    "nam": {
+      "xgb_baseline": 1.0,
+      "mono_gbm": 1.0,
+      "elasticnet_glm": 1.0,
+      "cart": 0.0605,
+      "scorecard": 1.0,
+      "ripper": 0.0052,
+      "ga2m": 1.0,
+      "nam": 1.0,
+      "knn": 1.0
+    },
+    "knn": {
+      "xgb_baseline": 1.0,
+      "mono_gbm": 1.0,
+      "elasticnet_glm": 1.0,
+      "cart": 0.0284,
+      "scorecard": 1.0,
+      "ripper": 0.0022,
+      "ga2m": 1.0,
+      "nam": 1.0,
+      "knn": 1.0
+    }
+  },
+  "note": "gene-level ROC-AUC per seqclust fold (majority-vote roll-up); Conover-Friedman post-hoc, Holm-adjusted. Among the 6 adequate families (excl ripper/cart/scorecard) NO pairwise diff significant; all significant pairs involve ripper or cart."
+}

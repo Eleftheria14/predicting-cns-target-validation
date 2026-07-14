@@ -1,0 +1,10 @@
+block,n_features,alone_gene_auc,unique_contribution
+ESMC-6B embedding,32,0.867,0.027
+protein-family,32,0.739,0.012
+predicted-GO,61,0.871,0.008
+homology,4,0.719,0.007
+brain expression,7,0.742,0.003
+localization/topology,4,0.81,-0.0
+genetic constraint,10,0.542,-0.001
+structure (AF),15,0.764,-0.001
+biophysics/composition,31,0.75,-0.005

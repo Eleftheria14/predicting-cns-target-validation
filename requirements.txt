@@ -1,0 +1,29 @@
+# Dependencies for predicting-cns-target-validation.
+#
+# The core block below is all you need to reproduce the headline result
+# (src/reproduce_headline.py), verify the split lock (src/verify_split_lock.py),
+# and run the EDA notebook. It stays light and runs on CPU.
+#
+# The optional block at the bottom adds the glass-box family training stack
+# (used by the full model-comparison harness in src/). Uncomment it, or run
+# `pip install -r requirements.txt` then install those lines by hand, only if
+# you are re-running the nine-family comparison rather than the reproduction.
+
+# --- core (reproduction + verifier + EDA) ---
+pandas>=2.0
+numpy>=1.24
+scikit-learn>=1.3
+xgboost>=2.0
+pyarrow>=12.0
+matplotlib>=3.7
+jupyter>=1.0
+
+# --- optional: full nine-family comparison harness ---
+# interpret>=0.6         # GA2M / EBM additive models with interactions
+# wittgenstein>=0.3      # RIPPER rule-list induction
+# torch>=2.0             # neural additive model (NAM)
+#
+# GPU acceleration used on the original DGX Spark (GB10) training host is optional;
+# everything above runs on CPU without it. cuML / cuDF (RAPIDS) come from the
+# nvidia / rapidsai conda channels and are not pip-installable:
+#   conda install -c rapidsai -c conda-forge -c nvidia cuml cudf

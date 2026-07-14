@@ -1,0 +1,19 @@
+{
+  "include": ["src"],
+  "exclude": ["**/__pycache__", ".nodebin", ".venv", ".cache"],
+  "typeCheckingMode": "basic",
+  "pythonVersion": "3.11",
+
+  "reportMissingImports": "warning",
+  "reportSelfClsParameterName": "none",
+  "reportPrivateImportUsage": "none",
+
+  "reportArgumentType": "warning",
+  "reportAttributeAccessIssue": "warning",
+  "reportCallIssue": "warning",
+  "reportOptionalMemberAccess": "warning",
+  "reportOptionalSubscript": "warning",
+  "reportOptionalOperand": "warning",
+  "reportIndexIssue": "warning",
+  "reportGeneralTypeIssues": "warning"
+}

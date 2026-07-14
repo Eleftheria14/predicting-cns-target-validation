@@ -1,0 +1,15 @@
+feature_group,decision,leaky,rationale
+ESMC-6B embeddings (2560),INCLUDED,No,Protein language-model embedding of the sequence; fully computable for any novel target. Largest single lift (+0.059). PCA-32 fit in-fold to avoid embedding leakage.
+Genome-intrinsic (84),INCLUDED,No,"Sequence-, constraint-, and brain-expression-derived (UniProt/InterPro/gnomAD/GTEx/HPA). All available at target-discovery time. The frozen cold-start baseline (0.700) is built on these alone."
+Predicted-GO (61),INCLUDED,No,GO terms PREDICTED from sequence-derived InterPro domains — distinct from CURATED GO (which accrues with study and would leak). Cold-start safe by construction.
+AlphaFold structure (15),INCLUDED,No,Descriptors of the sequence-predicted structure; available for any protein with a sequence. +0.026 standalone.
+Homology summary (4),INCLUDED,No,"Sequence homology to known targets; label-free. +0.014. NB: also used to build the homolog-safe fold, so evaluate with fold_seqclust."
+Gene-property groupby aggregates (7),"EXPLORED, then EXCLUDED",No (label-free),Within-family aggregates of intrinsic properties. Redundant with ESMC-6B+GO+structure (±0.002 on the full stack) — dropped from the canonical set; kept in v3 lineage.
+Disease-keyed groupby aggregates (13),EXCLUDED,"No, but BIAS","Aggregates keyed on disease. Give +0.058 CROSS-disease but only +0.005 WITHIN-disease — a disease-knowledge prior, not a target discriminator. Demoted per the anti-waste principle."
+Popularity / group-size counts,EXCLUDED,"No, but MISALIGNED",Disease crowding correlates -0.54 with success; gene track-record +0.50 but is survivorship (~0 for a novel target). A tool that followed the crowd has no counterfactual value (anti-waste objective).
+Tier 0 — Labels (31),EXCLUDED — banned,YES (the answer),"The outcome itself: label_consensus, label_tier, src_* etc."
+Tier 1 — Post-hoc outcome-derived (35),EXCLUDED — banned,YES,"Computed from what happened AFTER the decision: max_phase_reached, ctgov_n_failed_trials, tgt_other_failures, dis_other_fail_rate, moa_confirmed, ..."
+Tier 2 — Temporal-confounded (6),EXCLUDED — banned,YES,"Evidence that accrues as a target is pursued: first_year, total_evidence, recent_evidence."
+Tier 3 — Realized-investment / survivorship (16),EXCLUDED — banned,YES,"Exist BECAUSE someone already invested: n_ligands, has_ligand, is_ligandable, sm_tractable, chem_n_compounds, ..."
+Association evidence (assoc_*),"AVAILABLE, used cautiously",Partial (MNAR),Open Targets association scores; present mostly for already-studied targets (missing-not-at-random). Down-weighted; adds ±0.0003 on the fair set.
+"Causal / genetic evidence (gen_*, ClinGen, GWAS)",INCLUDED (covariate arm),No,Genetic-causality and functional evidence; the causal arm of the causal-vs-association test. Coverage uneven across CNS areas.
